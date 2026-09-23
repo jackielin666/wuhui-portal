@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#F6F6F4">
+  <title>五惠系統入口</title>
+  <link rel="icon" href="logo.png">
+  <style>
+    /* 配色規範見 CLAUDE.md：五惠紅 #D7000F 只用在 Logo，介面不使用紅色 */
+    :root {
+      --bg: #F6F6F4;
+      --card: #FFFFFF;
+      --ink: #2C2C2A;
+      --ink-soft: #6B6B66;
+      --line: #E3E3DE;
+      --icon-default: #8A94A0;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ---------- 頁首 ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .search {
+      position: relative;
+      width: 300px;
+      max-width: 100%;
+    }
+
+    .search svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      transform: translateY(-50%);
+      color: var(--ink-soft);
+      pointer-events: none;
+    }
+
+    .search input {
+      width: 100%;
+      height: 42px;
+      padding: 0 12px 0 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--ink);
+      font: inherit;
+      font-size: 16px; /* 16px 以上，iPhone 點選時才不會自動放大畫面 */
+    }
+
+    .search input::placeholder { color: var(--ink-soft); }
+
+    .search input:focus {
+      outline: 2px solid var(--ink);
+      outline-offset: 1px;
+      border-color: var(--ink);
+    }
+
+    /* ---------- 主要內容 ---------- */
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 8px 20px 32px;
+    }
+
+    .category { margin-top: 24px; }
+
+    .category h2 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category h2::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      border-radius: 2px;
+      background: var(--ink);
+    }
+
+    .category h2 .count {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ink-soft);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px;
+    }
+
+    /* ---------- 卡片 ---------- */
+    .card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+
+    .card:hover { border-color: var(--ink); }
+
+    .card:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+    }
+
+    .card:active { background: #FAFAF8; }
+
+    .icon {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--icon-default);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon svg { width: 24px; height: 24px; }
+
+    .card-body { min-width: 0; flex: 1; }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px 8px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0 7px;
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    .card-desc {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .message {
+      margin: 48px 0;
+      text-align: center;
+      color: var(--ink-soft);
+    }
+
+    .message strong { color: var(--ink); }
+
+    /* ---------- 頁尾 ---------- */
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px 20px 32px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--ink-soft);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px 16px;
+    }
+
+    /* ---------- 手機版 ---------- */
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px 16px 12px;
+      }
+      .brand img { height: 36px; }
+      .brand h1 { font-size: 18px; }
+      .search { width: 100%; }
+      main { padding: 0 16px 24px; }
+      .category { margin-top: 20px; }
+      .grid { grid-template-columns: 1fr; gap: 10px; }
+      .card { padding: 14px; }
+      footer { padding: 16px 16px 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="五惠食品 Logo" width="106" height="100">
+        <h1>五惠系統入口</h1>
+      </div>
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="搜尋系統名稱或說明" autocomplete="off" aria-label="搜尋系統">
+      </label>
+    </div>
+  </header>
+
+  <main id="content">
+    <p class="message">載入中…</p>
+  </main>
+
+  <footer>
+    <span id="total"></span>
+    <span id="updated"></span>
+  </footer>
+
+  <script>
+    // 系統清單都在 systems.json，新增或修改系統請改 systems.json，不需要改這個檔案。
+
+    // 內建圖示（24x24 線條圖示）。systems.json 的 "icon" 填下面其中一個名稱。
+    var ICONS = {
+      chart:     '<path d="M3 3v18h18"/><path d="M7 16v-4"/><path d="M12 16V8"/><path d="M17 16v-7"/>',
+      trend:     '<path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/>',
+      leaf:      '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6 2.4-.5 4.9-2 5.9-3"/>',
+      clock:     '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+      package:   '<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/>',
+      clipboard: '<path d="M9 4H6a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-3"/><rect x="9" y="2.5" width="6" height="3" rx="1"/><path d="m9 14 2 2 4-4"/>',
+      shield:    '<path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/>',
+      search:    '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+      wrench:    '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/>',
+      warehouse: '<path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-8h10v8"/><path d="M7 17h10"/>',
+      truck:     '<path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+      users:     '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/>',
+      file:      '<path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/>',
+      grid:      '<rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/>'
+    };
+
+    var DEFAULT_COLOR = '#8A94A0';
+    var TEST_STATUS = '開發/測試中';
+
+    var content = document.getElementById('content');
+    var searchInput = document.getElementById('search');
+    var categories = [];
+    var systems = [];
+
+    function el(tag, className, text) {
+      var node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text) node.textContent = text;
+      return node;
+    }
+
+    function iconSvg(name) {
+      var paths = ICONS[name] || ICONS.grid;
+      return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + '</svg>';
+    }
+
+    function isValidColor(value) {
+      return typeof value === 'string' && /^#[0-9A-Fa-f]{6}$/.test(value);
+    }
+
+    function isValidUrl(value) {
+      return typeof value === 'string' && /^https?:\/\//i.test(value);
+    }
+
+    function buildCard(sys) {
+      var card = el('a', 'card');
+      card.href = sys.url;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+
+      var icon = el('div', 'icon');
+      icon.style.background = isValidColor(sys.color) ? sys.color : DEFAULT_COLOR;
+      icon.innerHTML = iconSvg(sys.icon);
+      card.appendChild(icon);
+
+      var body = el('div', 'card-body');
+      var title = el('h3', 'card-title');
+      title.appendChild(el('span', '', sys.name));
+      if (sys.status === TEST_STATUS) title.appendChild(el('span', 'badge', '測試中'));
+      body.appendChild(title);
+      if (sys.description) body.appendChild(el('p', 'card-desc', sys.description));
+      card.appendChild(body);
+
+      return card;
+    }
+
+    function matches(sys, keyword) {
+      if (!keyword) return true;
+      var text = [sys.name, sys.description, sys.category].join(' ').toLowerCase();
+      return text.indexOf(keyword) !== -1;
+    }
+
+    function render() {
+      var keyword = searchInput.value.trim().toLowerCase();
+      var list = systems.filter(function (s) { return matches(s, keyword); });
+
+      // 依 categories 的順序分組；不在清單內的類別排在最後
+      var order = categories.slice();
+      list.forEach(function (s) {
+        if (order.indexOf(s.category) === -1) order.push(s.category);
+      });
+
+      content.innerHTML = '';
+
+      if (list.length === 0) {
+        var msg = el('p', 'message');
+        msg.appendChild(document.createTextNode('找不到符合「'));
+        msg.appendChild(el('strong', '', searchInput.value.trim()));
+        msg.appendChild(document.createTextNode('」的系統'));
+        content.appendChild(msg);
+        return;
+      }
+
+      order.forEach(function (cat) {
+        var items = list.filter(function (s) { return s.category === cat; });
+        if (items.length === 0) return;
+
+        var section = el('section', 'category');
+        var heading = el('h2', '', cat);
+        heading.appendChild(el('span', 'count', items.length + ' 個系統'));
+        section.appendChild(heading);
+
+        var grid = el('div', 'grid');
+        items.forEach(function (s) { grid.appendChild(buildCard(s)); });
+        section.appendChild(grid);
+        content.appendChild(section);
+      });
+    }
+
+    function showError(html) {
+      content.innerHTML = '<p class="message">' + html + '</p>';
+    }
+
+    fetch('systems.json', { cache: 'no-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        categories = Array.isArray(data.categories) ? data.categories : [];
+        systems = (Array.isArray(data.systems) ? data.systems : []).filter(function (s) {
+          return s && s.visible !== false && s.status !== '計劃中' && isValidUrl(s.url);
+        });
+
+        document.getElementById('total').textContent = '共 ' + systems.length + ' 個系統';
+        if (data.updated) document.getElementById('updated').textContent = '最後更新：' + data.updated;
+
+        render();
+        searchInput.addEventListener('input', render);
+      })
+      .catch(function () {
+        if (location.protocol === 'file:') {
+          showError('<strong>無法讀取系統清單</strong><br>請不要直接雙擊開啟 index.html，改用本機伺服器預覽（步驟見 README.md）。');
+        } else {
+          showError('<strong>無法讀取系統清單</strong><br>請確認 systems.json 格式正確（逗號、引號、括號），再重新整理頁面。');
+        }
+      });
+  </script>
+</body>
+</html>
