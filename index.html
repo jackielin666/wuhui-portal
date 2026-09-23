@@ -15,7 +15,7 @@
       --ink: #2C2C2A;
       --ink-soft: #6B6B66;
       --line: #E3E3DE;
-      --icon-default: #3F4A56;
+      --icon-default: #8A94A0;
       --radius: 10px;
     }
 
@@ -209,15 +209,9 @@
     }
 
     .card-desc {
-      margin: 4px 0 8px;
+      margin: 4px 0 0;
       font-size: 14px;
       color: var(--ink);
-    }
-
-    .card-users {
-      margin: 0;
-      font-size: 13px;
-      color: var(--ink-soft);
     }
 
     .message {
@@ -270,7 +264,7 @@
       </div>
       <label class="search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="search" type="search" placeholder="搜尋系統、說明或使用單位" autocomplete="off" aria-label="搜尋系統">
+        <input id="search" type="search" placeholder="搜尋系統名稱或說明" autocomplete="off" aria-label="搜尋系統">
       </label>
     </div>
   </header>
@@ -305,7 +299,7 @@
       grid:      '<rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/>'
     };
 
-    var DEFAULT_COLOR = '#3F4A56';
+    var DEFAULT_COLOR = '#8A94A0';
     var TEST_STATUS = '開發/測試中';
 
     var content = document.getElementById('content');
@@ -350,7 +344,6 @@
       if (sys.status === TEST_STATUS) title.appendChild(el('span', 'badge', '測試中'));
       body.appendChild(title);
       if (sys.description) body.appendChild(el('p', 'card-desc', sys.description));
-      if (sys.users) body.appendChild(el('p', 'card-users', '主要使用者：' + sys.users));
       card.appendChild(body);
 
       return card;
@@ -358,7 +351,7 @@
 
     function matches(sys, keyword) {
       if (!keyword) return true;
-      var text = [sys.name, sys.description, sys.users, sys.category].join(' ').toLowerCase();
+      var text = [sys.name, sys.description, sys.category].join(' ').toLowerCase();
       return text.indexOf(keyword) !== -1;
     }
 

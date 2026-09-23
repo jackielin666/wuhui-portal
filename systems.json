@@ -1,18 +1,42 @@
 {
   "updated": "2026-09-23",
-  "categories": ["製造", "品保", "工務", "資材"],
+  "categories": ["品保", "製造", "工務", "資材"],
   "systems": [
     {
-      "name": "生產鍋數分析儀表板",
-      "category": "製造",
-      "users": "管理部/製造課",
+      "name": "智慧環境5S巡檢系統",
+      "category": "品保",
+      "users": "品保課",
       "status": "上線",
-      "description": "生產鍋數統計與趨勢分析",
-      "note": "說明為暫定，待確認",
-      "url": "https://jackielin666.github.io/production-dashboard/",
-      "color": "",
-      "icon": "chart",
+      "description": "品保部門每日環境巡檢稽核圖文記錄，每日更新並提供製造現場參照。",
+      "note": "",
+      "url": "https://smart-5s-inspection.vercel.app",
+      "color": "#78272A",
+      "icon": "shield",
       "visible": true
+    },
+    {
+      "name": "成品檢驗記錄分析",
+      "category": "品保",
+      "users": "管理部/品保課",
+      "status": "上線",
+      "description": "上傳「品保-成品檢驗紀錄表」Excel 檔，即時產生圖表分析。",
+      "note": "",
+      "url": "https://jackielin666.github.io/product-inspection-report/",
+      "color": "",
+      "icon": "clipboard",
+      "visible": true
+    },
+    {
+      "name": "進料檢驗",
+      "category": "品保",
+      "users": "品保課",
+      "status": "計劃中",
+      "description": "提供品保進料檢驗即時記錄",
+      "note": "尚無網址",
+      "url": "",
+      "color": "",
+      "icon": "search",
+      "visible": false
     },
     {
       "name": "原料處理記錄及分析",
@@ -24,6 +48,18 @@
       "url": "https://fruit-yield-tracker.vercel.app",
       "color": "#2D6A4F",
       "icon": "leaf",
+      "visible": true
+    },
+    {
+      "name": "生產鍋數分析儀表板",
+      "category": "製造",
+      "users": "管理部/製造課",
+      "status": "上線",
+      "description": "生產鍋數統計與趨勢分析",
+      "note": "說明為暫定，待確認",
+      "url": "https://jackielin666.github.io/production-dashboard/",
+      "color": "",
+      "icon": "chart",
       "visible": true
     },
     {
@@ -49,42 +85,6 @@
       "color": "",
       "icon": "package",
       "visible": true
-    },
-    {
-      "name": "成品檢驗記錄分析",
-      "category": "品保",
-      "users": "管理部/品保課",
-      "status": "上線",
-      "description": "上傳「品保-成品檢驗紀錄表」Excel 檔，即時產生圖表分析。",
-      "note": "",
-      "url": "https://jackielin666.github.io/product-inspection-report/",
-      "color": "",
-      "icon": "clipboard",
-      "visible": true
-    },
-    {
-      "name": "智慧環境5S巡檢系統",
-      "category": "品保",
-      "users": "品保課",
-      "status": "上線",
-      "description": "品保部門每日環境巡檢稽核圖文記錄，每日更新並提供製造現場參照。",
-      "note": "",
-      "url": "https://smart-5s-inspection.vercel.app",
-      "color": "#78272A",
-      "icon": "shield",
-      "visible": true
-    },
-    {
-      "name": "進料檢驗",
-      "category": "品保",
-      "users": "品保課",
-      "status": "計劃中",
-      "description": "提供品保進料檢驗即時記錄",
-      "note": "尚無網址",
-      "url": "",
-      "color": "",
-      "icon": "search",
-      "visible": false
     },
     {
       "name": "廠務設備日常巡檢",
