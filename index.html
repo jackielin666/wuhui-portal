@@ -325,6 +325,15 @@
       return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + '</svg>';
     }
 
+    // 淺色底（例如淺粉紅）配白色線條會看不清楚，改用深色線條
+    function isLightColor(hex) {
+      var c = [1, 3, 5].map(function (i) {
+        var v = parseInt(hex.substr(i, 2), 16) / 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2] > 0.4;
+    }
+
     function isValidColor(value) {
       return typeof value === 'string' && /^#[0-9A-Fa-f]{6}$/.test(value);
     }
@@ -346,7 +355,9 @@
       }
 
       var icon = el('div', 'icon');
-      icon.style.background = isValidColor(sys.color) ? sys.color : DEFAULT_COLOR;
+      var bg = isValidColor(sys.color) ? sys.color : DEFAULT_COLOR;
+      icon.style.background = bg;
+      if (isLightColor(bg)) icon.style.color = '#2C2C2A';
       icon.innerHTML = iconSvg(sys.icon);
       card.appendChild(icon);
 
