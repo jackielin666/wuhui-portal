@@ -40,21 +40,23 @@
 | 欄位 | 必填 | 說明 |
 |---|---|---|
 | `updated` | 是 | 清單最後更新日期，顯示在頁尾 |
-| `categories` | 是 | 類別順序：品保 → 製造 → 工務 → 資材 |
+| `categories` | 是 | 類別順序：品保 → 製造 → 工務 → 業務 → 資材 |
 | `name` | 是 | 系統名稱 |
 | `category` | 是 | 必須是 `categories` 中的一個 |
 | `users` | 是 | 主要使用者（與 Google Sheet 同步用，**不顯示在畫面上**、也不列入搜尋） |
-| `status` | 是 | `上線`／`開發/測試中`／`計劃中` |
+| `status` | 是 | `上線`／`開發/測試中`／`計劃中`／`暫緩` |
 | `description` | 是 | 簡短說明（建議 40 字內） |
 | `note` | 否 | 內部備註，不會顯示在畫面上 |
-| `url` | 是 | 完整網址，以 `https://` 開頭 |
+| `url` | 否 | 完整網址，以 `https://` 開頭；還沒有網址就留 `""` |
 | `color` | 否 | 系統代表色 `#RRGGBB`，留空用預設色 |
 | `icon` | 是 | 內建圖示名稱（見下方） |
-| `visible` | 是 | `false` 則不顯示；`計劃中` 的系統一律 `false` |
+| `visible` | 是 | `true` 才顯示在畫面上；`false` 只保留資料 |
 
 顯示規則（寫在 `index.html`）：
-- `visible: false`、`status: 計劃中`、或 `url` 不是 http(s) 開頭 → 不顯示。
+- 是否顯示只看 `visible`：`true` 顯示，其他一律不顯示。
+- `url` 是 http(s) 開頭 → 卡片可點擊；沒有網址 → 虛線外框卡片，不能點擊。
 - `status: 開發/測試中` → 卡片加「測試中」標籤。
+- `status: 計劃中` → 卡片加「規劃中」標籤。
 - 卡片只顯示：圖示、系統名稱、簡短說明（不顯示主要使用者）。
 - 同一類別內的卡片順序 = `systems.json` 裡的排列順序（與 Google Sheet 一致）。
 - 點擊卡片以新分頁開啟（`target="_blank" rel="noopener noreferrer"`）。

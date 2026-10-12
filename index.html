@@ -170,6 +170,11 @@
 
     .card:active { background: #FAFAF8; }
 
+    /* 規劃中（還沒有網址）的系統：不能點擊，虛線外框 */
+    .card.is-planned { border-style: dashed; cursor: default; }
+    .card.is-planned:hover { border-color: var(--line); }
+    .card.is-planned:active { background: var(--card); }
+
     .icon {
       flex: 0 0 auto;
       width: 44px;
@@ -301,6 +306,7 @@
 
     var DEFAULT_COLOR = '#8A94A0';
     var TEST_STATUS = '開發/測試中';
+    var PLANNED_STATUS = '計劃中';
 
     var content = document.getElementById('content');
     var searchInput = document.getElementById('search');
@@ -328,10 +334,16 @@
     }
 
     function buildCard(sys) {
-      var card = el('a', 'card');
-      card.href = sys.url;
-      card.target = '_blank';
-      card.rel = 'noopener noreferrer';
+      var card;
+      if (isValidUrl(sys.url)) {
+        card = el('a', 'card');
+        card.href = sys.url;
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+      } else {
+        // 還沒有網址：顯示卡片，但不能點擊
+        card = el('div', 'card is-planned');
+      }
 
       var icon = el('div', 'icon');
       icon.style.background = isValidColor(sys.color) ? sys.color : DEFAULT_COLOR;
@@ -342,6 +354,7 @@
       var title = el('h3', 'card-title');
       title.appendChild(el('span', '', sys.name));
       if (sys.status === TEST_STATUS) title.appendChild(el('span', 'badge', '測試中'));
+      if (sys.status === PLANNED_STATUS) title.appendChild(el('span', 'badge', '規劃中'));
       body.appendChild(title);
       if (sys.description) body.appendChild(el('p', 'card-desc', sys.description));
       card.appendChild(body);
@@ -404,7 +417,7 @@
       .then(function (data) {
         categories = Array.isArray(data.categories) ? data.categories : [];
         systems = (Array.isArray(data.systems) ? data.systems : []).filter(function (s) {
-          return s && s.visible !== false && s.status !== '計劃中' && isValidUrl(s.url);
+          return s && s.visible === true;
         });
 
         document.getElementById('total').textContent = '共 ' + systems.length + ' 個系統';
