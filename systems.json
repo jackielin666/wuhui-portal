@@ -30,9 +30,9 @@
       "name": "進料檢驗",
       "category": "品保",
       "users": "品保課",
-      "status": "計劃中",
+      "status": "暫緩",
       "description": "提供品保進料檢驗即時記錄",
-      "note": "尚無網址",
+      "note": "尚無網址；暫緩開發",
       "url": "",
       "color": "",
       "icon": "search",
@@ -63,18 +63,6 @@
       "visible": true
     },
     {
-      "name": "產品工時及製成率統計",
-      "category": "製造",
-      "users": "管理部/製造課",
-      "status": "開發/測試中",
-      "description": "上傳「製造-產品製成率」Excel 檔，即時產生最新分析報表以及月報。",
-      "note": "",
-      "url": "https://jackielin666.github.io/yield-worktime-stats/",
-      "color": "",
-      "icon": "clock",
-      "visible": true
-    },
-    {
       "name": "品項全流程工時成本",
       "category": "製造",
       "users": "管理部/製造課",
@@ -84,6 +72,18 @@
       "url": "https://jackielin666.github.io/packaging-capacity-dashboard/efficiency/",
       "color": "",
       "icon": "trend",
+      "visible": true
+    },
+    {
+      "name": "產品工時及製成率統計",
+      "category": "製造",
+      "users": "管理部/製造課",
+      "status": "開發/測試中",
+      "description": "上傳「製造-產品製成率」Excel 檔，即時產生最新分析報表以及月報。",
+      "note": "",
+      "url": "https://jackielin666.github.io/yield-worktime-stats/",
+      "color": "",
+      "icon": "clock",
       "visible": true
     },
     {
@@ -116,11 +116,11 @@
       "users": "業務部",
       "status": "計劃中",
       "description": "由業務部門助理，每日更新業務出貨資訊。",
-      "note": "尚無網址",
+      "note": "尚無網址；顯示為「規劃中」卡片，不可點擊",
       "url": "",
       "color": "",
       "icon": "truck",
-      "visible": false
+      "visible": true
     },
     {
       "name": "外倉存貨設備管理",
