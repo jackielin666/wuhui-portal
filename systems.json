@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23",
+  "updated": "2026-10-12",
   "categories": ["品保", "製造", "工務", "資材"],
   "systems": [
     {
@@ -60,6 +60,18 @@
       "url": "https://jackielin666.github.io/production-dashboard/",
       "color": "",
       "icon": "chart",
+      "visible": true
+    },
+    {
+      "name": "品項全流程工時成本",
+      "category": "製造",
+      "users": "管理部/製造課",
+      "status": "開發/測試中",
+      "description": "製造 → 充填 → 包裝三段人時與直接人工標準成本分析。",
+      "note": "狀態暫定為開發/測試中，待確認",
+      "url": "https://jackielin666.github.io/packaging-capacity-dashboard/efficiency/",
+      "color": "",
+      "icon": "trend",
       "visible": true
     },
     {
