@@ -15,7 +15,7 @@
       "visible": true
     },
     {
-      "name": "成品檢驗記錄分析",
+      "name": "成品檢驗紀錄分析",
       "category": "品保",
       "users": "管理部/品保課",
       "status": "上線",
@@ -111,7 +111,7 @@
       "visible": true
     },
     {
-      "name": "每日送貨排程記錄",
+      "name": "每日送貨排程紀錄",
       "category": "業務",
       "users": "業務部",
       "status": "計劃中",
