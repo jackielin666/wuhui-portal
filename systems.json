@@ -114,7 +114,7 @@
       "name": "每日送貨排程紀錄",
       "category": "業務",
       "users": "業務部",
-      "status": "上線",
+      "status": "開發/測試中",
       "description": "由業務部門助理，每日更新業務出貨資訊。",
       "note": "",
       "url": "https://daily-delivery-schedule.vercel.app/",
