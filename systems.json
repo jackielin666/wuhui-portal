@@ -114,10 +114,10 @@
       "name": "每日送貨排程紀錄",
       "category": "業務",
       "users": "業務部",
-      "status": "計劃中",
+      "status": "開發/測試中",
       "description": "由業務部門助理，每日更新業務出貨資訊。",
-      "note": "尚無網址；顯示為「規劃中」卡片，不可點擊",
-      "url": "",
+      "note": "狀態暫定為開發/測試中，待確認",
+      "url": "https://daily-delivery-schedule.vercel.app/",
       "color": "#F4B3C8",
       "icon": "truck",
       "visible": true
