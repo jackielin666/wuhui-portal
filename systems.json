@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "categories": ["品保", "製造", "工務", "業務", "資材"],
   "systems": [
     {
@@ -101,7 +101,7 @@
     {
       "name": "原料前處理及備料工時紀錄及分析",
       "category": "製造",
-      "users": "製造課（原料班）/管理部",
+      "users": "管理部/製造課",
       "status": "開發/測試中",
       "description": "原料班依生產排程，記錄備料、挑揀、切丁、清洗等前處理人力工時，提供品項全流程工時成本分析。",
       "note": "Repo: jackielin666/raw-material-prep-hours；Supabase schema prep。尚無網址，Vercel 部署後補上 url。",
