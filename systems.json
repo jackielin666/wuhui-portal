@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "categories": ["品保", "製造", "工務", "業務", "資材"],
   "systems": [
     {
@@ -94,7 +94,7 @@
       "description": "提供成品包裝每日人力及工時紀錄資料輸入頁面。",
       "note": "",
       "url": "https://jackielin666.github.io/packaging-capacity-dashboard/",
-      "color": "",
+      "color": "#0A6A5D",
       "icon": "package",
       "visible": true
     },
