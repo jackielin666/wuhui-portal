@@ -10,7 +10,7 @@
       "description": "品保部門每日環境巡檢稽核圖文記錄，每日更新並提供製造現場參照。",
       "note": "",
       "url": "https://smart-5s-inspection.vercel.app",
-      "color": "#78272A",
+      "color": "#7A1A1D",
       "icon": "shield",
       "visible": true
     },
@@ -22,7 +22,7 @@
       "description": "上傳「品保-成品檢驗紀錄表」Excel 檔，即時產生圖表分析。",
       "note": "",
       "url": "https://jackielin666.github.io/product-inspection-report/",
-      "color": "",
+      "color": "#283593",
       "icon": "clipboard",
       "visible": true
     },
