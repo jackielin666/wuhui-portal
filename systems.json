@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "categories": ["品保", "製造", "工務", "業務", "資材"],
   "systems": [
     {
@@ -142,7 +142,7 @@
       "description": "提供即時更新，以供查閱目前外倉存放之設備及物料。",
       "note": "",
       "url": "https://jackielin666.github.io/wh-warehouse/",
-      "color": "",
+      "color": "#8B5E3C",
       "icon": "warehouse",
       "visible": true
     }
