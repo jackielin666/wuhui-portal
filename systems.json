@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-11-02",
   "categories": ["品保", "製造", "工務", "業務", "資材"],
   "systems": [
     {
@@ -63,6 +63,18 @@
       "visible": true
     },
     {
+      "name": "包裝產能儀表板",
+      "category": "製造",
+      "users": "管理部/製造課",
+      "status": "上線",
+      "description": "提供成品包裝每日人力及工時紀錄資料輸入頁面。",
+      "note": "",
+      "url": "https://jackielin666.github.io/packaging-capacity-dashboard/",
+      "color": "#0A6A5D",
+      "icon": "package",
+      "visible": true
+    },
+    {
       "name": "品項全流程工時成本",
       "category": "製造",
       "users": "管理部/製造課",
@@ -84,18 +96,6 @@
       "url": "https://jackielin666.github.io/yield-worktime-stats/",
       "color": "",
       "icon": "clock",
-      "visible": true
-    },
-    {
-      "name": "包裝產能儀表板",
-      "category": "製造",
-      "users": "管理部/製造課",
-      "status": "開發/測試中",
-      "description": "提供成品包裝每日人力及工時紀錄資料輸入頁面。",
-      "note": "",
-      "url": "https://jackielin666.github.io/packaging-capacity-dashboard/",
-      "color": "#0A6A5D",
-      "icon": "package",
       "visible": true
     },
     {
@@ -126,7 +126,7 @@
       "name": "每日送貨排程紀錄",
       "category": "業務",
       "users": "業務部",
-      "status": "開發/測試中",
+      "status": "上線",
       "description": "由業務部門助理，每日更新業務出貨資訊。",
       "note": "",
       "url": "https://daily-delivery-schedule.vercel.app/",
