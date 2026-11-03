@@ -1,6 +1,12 @@
 {
-  "updated": "2026-11-02",
-  "categories": ["品保", "製造", "工務", "業務", "資材"],
+  "updated": "2026-11-03",
+  "categories": [
+    "品保",
+    "製造",
+    "工務",
+    "業務",
+    "資材"
+  ],
   "systems": [
     {
       "name": "智慧環境5S巡檢系統",
@@ -24,6 +30,18 @@
       "url": "https://jackielin666.github.io/product-inspection-report/",
       "color": "#283593",
       "icon": "clipboard",
+      "visible": true
+    },
+    {
+      "name": "充填溫度日報",
+      "category": "品保",
+      "users": "品保課",
+      "status": "開發/測試中",
+      "description": "上傳充填機溫度紀錄 Excel 檔，自動產生充填溫度曲線及 PDF 日報。",
+      "note": "Repo: jackielin666/filling-temp-report；登入帳號共用 Supabase smart-equipment-patrol（帳號網域 @filltemp.local）。",
+      "url": "https://jackielin666.github.io/filling-temp-report/",
+      "color": "#1F4E79",
+      "icon": "thermometer",
       "visible": true
     },
     {
