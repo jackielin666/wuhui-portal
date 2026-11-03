@@ -8,7 +8,8 @@
 ## 最重要的原則：只改 systems.json
 - 新增、修改、隱藏系統 → **只改 `systems.json`**，不要動 `index.html`。
 - `index.html` 只在「版面／功能」要改時才修改。
-- 系統清單的**正本**在 Google Sheet「五惠系統清單」。`systems.json` 是它的網站版副本，兩邊要同步。
+- 系統清單的**正本是 `systems.json`（入口網站）**。Google Sheet「五惠系統清單」是副本，`systems.json` 異動後要同步更新 Sheet（狀態、說明、網址、排列順序）。
+- Sheet 獨有的欄位（操作人員、系統維護者、進行中功能）以 Sheet 為準，同步時不要覆蓋。
 - 修改 `systems.json` 時，順手把最上方的 `"updated"` 改成當天日期（YYYY-MM-DD）。
 
 ## 安全規範
@@ -66,7 +67,7 @@
 - `status: 開發/測試中` → 卡片加「測試中」標籤。
 - `status: 計劃中` → 卡片加「規劃中」標籤。
 - 卡片只顯示：圖示、系統名稱、簡短說明（不顯示主要使用者）。
-- 同一類別內的卡片順序 = `systems.json` 裡的排列順序（與 Google Sheet 一致）。
+- 同一類別內的卡片順序 = `systems.json` 裡的排列順序（Google Sheet 跟著這個順序）。
 - 點擊卡片以新分頁開啟（`target="_blank" rel="noopener noreferrer"`）。
 
 ## 內建圖示名稱
