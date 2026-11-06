@@ -1,12 +1,6 @@
 {
-  "updated": "2026-11-03",
-  "categories": [
-    "品保",
-    "製造",
-    "工務",
-    "業務",
-    "資材"
-  ],
+  "updated": "2026-11-06",
+  "categories": ["品保", "製造", "工務", "業務", "資材"],
   "systems": [
     {
       "name": "智慧環境5S巡檢系統",
@@ -108,7 +102,7 @@
       "name": "品項全流程工時成本",
       "category": "製造",
       "users": "管理部/製造課",
-      "status": "開發/測試中",
+      "status": "尚未開放",
       "description": "上傳「製造-產品製成率」Excel 檔，會自動抓區包裝資料庫資料並即時產生\"製造/充填/包裝\"的直接人工標準成本。",
       "note": "",
       "url": "https://jackielin666.github.io/packaging-capacity-dashboard/efficiency/",
@@ -120,7 +114,7 @@
       "name": "產品工時及製成率統計",
       "category": "製造",
       "users": "管理部/製造課",
-      "status": "開發/測試中",
+      "status": "尚未開放",
       "description": "上傳「製造-產品製成率」Excel 檔，即時產生最新分析報表以及月報。",
       "note": "",
       "url": "https://jackielin666.github.io/yield-worktime-stats/",
