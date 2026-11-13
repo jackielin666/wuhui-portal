@@ -39,16 +39,16 @@
       "visible": true
     },
     {
-      "name": "進料檢驗",
+      "name": "進料檢驗系統",
       "category": "品保",
-      "users": "品保課",
-      "status": "暫緩",
-      "description": "提供品保進料檢驗即時記錄",
-      "note": "尚無網址；暫緩開發",
+      "users": "品保課、採購",
+      "status": "開發中",
+      "description": "採購預排進貨，品保即時查驗並產出每日進料查檢表，追蹤文件補件。",
+      "note": "開發中，尚未接上網址；repo 預定 wuhui-foods/iqc-system；系統色待畫面風格定案後填入",
       "url": "",
       "color": "",
       "icon": "search",
-      "visible": false
+      "visible": true
     },
     {
       "name": "水果原料處理紀錄及分析",
