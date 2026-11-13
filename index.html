@@ -310,6 +310,7 @@
     var TEST_STATUS = '開發/測試中';
     var PLANNED_STATUS = '計劃中';
     var CLOSED_STATUS = '尚未開放';
+    var DEV_STATUS = '開發中';
 
     var content = document.getElementById('content');
     var searchInput = document.getElementById('search');
@@ -370,6 +371,7 @@
       if (sys.status === TEST_STATUS) title.appendChild(el('span', 'badge', '測試中'));
       if (sys.status === PLANNED_STATUS) title.appendChild(el('span', 'badge', '規劃中'));
       if (sys.status === CLOSED_STATUS) title.appendChild(el('span', 'badge', '尚未開放'));
+      if (sys.status === DEV_STATUS) title.appendChild(el('span', 'badge', '開發中'));
       body.appendChild(title);
       if (sys.description) body.appendChild(el('p', 'card-desc', sys.description));
       card.appendChild(body);
