@@ -141,7 +141,7 @@
       "status": "上線",
       "description": "由業務部門助理，每日更新業務出貨資訊。",
       "note": "",
-      "url": "https://daily-delivery-schedule.vercel.app/",
+      "url": "https://wuhui-delivery.vercel.app",
       "color": "#F4B3C8",
       "icon": "truck",
       "visible": true
